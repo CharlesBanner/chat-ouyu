@@ -45,3 +45,7 @@ patchprocess
 derby.log
 nb-configuration.xml
 .DS_Store
+/.mvn/
+/mvnw.cmd
+/mvnw
+.mvn
