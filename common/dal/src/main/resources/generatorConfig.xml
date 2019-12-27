@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--数据库驱动-->
+    <classPathEntry
+            location="${settings.localRepository}/mysql/mysql-connector-java/5.1.47/mysql-connector-java-5.1.47.jar"/>
+
+    <context id="Mysql2Tables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+        </plugin>
+
+        <!--数据库链接地址账号密码-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://10.28.100.26:53207/credit_rating?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"
+                        userId="root" password="Bbd@2017123!@#">
+        </jdbcConnection>
+
+        <!--生成Model类存放位置-->
+        <javaModelGenerator targetPackage="com.bbd.eco.common.model"
+                            targetProject="${project.parent.basedir}\common\model\src\main\java">
+            <property name="rootClass" value="com.bbd.eco.common.model.base.IdAutoIncrementStrategy"/>
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+            <property name="javaExampleTargetPackage" value="com.bbd.eco.common.model"/>
+            <property name="javaExampleTargetProject" value="${project.parent.basedir}\common\model\src\main\java"/>
+        </javaModelGenerator>
+
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="${project.parent.basedir}\common\model\src\main\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!--生成Dao类存放位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.bbd.eco.common.dal.dao"
+                             targetProject="${project.parent.basedir}\common\dal\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--demo-->
+        <table tableName="generate_tutorial">
+            <ignoreColumn column="id"/>
+        </table>
+
+        <!-- eco_assess_system -->
+        <table tableName="eco_assess_system" domainObjectName="EcoAssessSystem">
+            <ignoreColumn column="id"/>
+        </table>
+
+        <!-- eco_banner -->
+        <table tableName="eco_banner" domainObjectName="EcoBanner">
+            <ignoreColumn column="id"/>
+        </table>
+        <!-- eco_information_disclosure -->
+        <table tableName="eco_information_disclosure" domainObjectName="EcoInformationDisclosure">
+            <ignoreColumn column="id"/>
+        </table>
+    </context>
+</generatorConfiguration>

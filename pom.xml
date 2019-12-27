@@ -11,7 +11,7 @@
     </parent>
     <groupId>com.charles</groupId>
     <artifactId>chat-ouyu</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <name>chat-ouyu</name>
     <description>偶遇 聊天服务端</description>
 
@@ -46,11 +46,15 @@
     </properties>
 
     <modules>
-        <module>charles-commons</module>
-        <module>charles-dao</module>
-        <module>charles-domain</module>
-        <module>charles-service</module>
-        <module>charles-web</module>
+
+        <module>biz/service</module>
+        <module>biz/domain</module>
+        <module>biz/cron</module>
+        <module>common/model</module>
+        <module>common/util</module>
+        <module>common/dal</module>
+        <module>common/integration</module>
+        <module>facade/impl</module>
     </modules>
 
 
@@ -220,6 +224,56 @@
                 <artifactId>okhttp</artifactId>
                 <version>${okhttp.version}</version>
             </dependency>
+
+            <!--项目本身-->
+            <dependency>
+                <groupId>com.charles</groupId>
+                <artifactId>charles-service-biz-service</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.charles</groupId>
+                <artifactId>charles-service-common-dal</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.charles</groupId>
+                <artifactId>charles-service-common-integration</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.charles</groupId>
+                <artifactId>charles-service-common-model</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.charles</groupId>
+                <artifactId>charles-service-common-util</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.charles</groupId>
+                <artifactId>charles-service-biz-domain</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.charles</groupId>
+                <artifactId>charles-service-biz-service</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.charles</groupId>
+                <artifactId>charles-service-biz-cron</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
     <build>
