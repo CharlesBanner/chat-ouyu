@@ -6,9 +6,7 @@
         <groupId>com.charles</groupId>
         <artifactId>chat-ouyu</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.charles</groupId>
     <artifactId>charles-domain</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>charles-domain</name>
@@ -32,17 +30,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-core</artifactId>
+            <version>1.0.5</version>
+        </dependency>
 
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

@@ -6,7 +6,6 @@
         <groupId>com.charles</groupId>
         <artifactId>chat-ouyu</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
     </parent>
     <artifactId>charles-dao</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -31,6 +30,16 @@
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
         </dependency>
 
         <dependency>
