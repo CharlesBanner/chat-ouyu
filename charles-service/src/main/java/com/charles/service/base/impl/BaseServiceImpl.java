@@ -87,10 +87,12 @@ public class BaseServiceImpl<M extends Mapper<T>, T> implements BaseService<T> {
 
     @Override
     public Page<T> selectPage(int pageNum, int pageSize, T condition) {
-        if (pageNum < 1)
+        if (pageNum < 1){
             pageNum = 1;
-        if (pageSize < 1)
+        }
+        if (pageSize < 1){
             pageSize = 10;
+        }
         com.github.pagehelper.Page<T> page = PageHelper.startPage(pageNum, pageSize);
         this.selectList(condition);
         return new Page<>(page);
@@ -98,10 +100,12 @@ public class BaseServiceImpl<M extends Mapper<T>, T> implements BaseService<T> {
 
     @Override
     public Page<T> selectPageByExample(int pageNum, int pageSize, Object exampleCondition) {
-        if (pageNum < 1)
+        if (pageNum < 1){
             pageNum = 1;
-        if (pageSize < 1)
+        }
+        if (pageSize < 1){
             pageSize = 10;
+        }
         com.github.pagehelper.Page<T> page = PageHelper.startPage(pageNum, pageSize);
         this.selectByExample(exampleCondition);
         return new Page<>(page);
