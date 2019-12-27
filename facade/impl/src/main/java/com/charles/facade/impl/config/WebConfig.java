@@ -3,8 +3,7 @@ package com.charles.facade.impl.config;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-import com.bbd.eco.plugin.LoginEcoUserArgumentResolver;
-import com.bbd.eco.plugin.LoginUserArgumentResolver;
+import com.charles.facade.impl.plugn.LoginUserArgumentResolver;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -47,7 +46,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
         super.addArgumentResolvers(argumentResolvers);
         argumentResolvers.add(new LoginUserArgumentResolver());
-        argumentResolvers.add(new LoginEcoUserArgumentResolver());
     }
 
     @Override
