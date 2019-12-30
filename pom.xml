@@ -42,6 +42,7 @@
         <hibernate.validator.version>5.3.5.Final</hibernate.validator.version>
         <swagger2.version>2.6.1</swagger2.version>
         <tk.mybatis.base.version>1.0.5</tk.mybatis.base.version>
+        <nacos-config-version>0.2.4</nacos-config-version>
 
     </properties>
 
@@ -273,7 +274,12 @@
                 <artifactId>charles-service-biz-cron</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
-
+            <!--nacos-->
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-config-spring-boot-starter</artifactId>
+                <version>${nacos-config-version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
